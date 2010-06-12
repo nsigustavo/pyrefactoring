@@ -1,0 +1,20 @@
+
+
+>>> from pyrefactoring import *
+>>> list_files()
+['.../pyrefactoring/setup.py', '.../pyrefactoring/pyrefactoring.py']
+
+
+
+
+>>> replace('def teste():pass\n', 'teste', 'new_test')
+'def new_test():pass\n'
+
+>>> print replace("""
+... def teste():
+...     print "teste"
+... teste()
+... """, 'teste', 'new_test').strip()
+def new_test():
+    print "teste"
+new_test()
